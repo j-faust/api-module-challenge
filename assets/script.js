@@ -1,9 +1,10 @@
-let highScore = document.getElementById("#high-score");
-let timer = document.getElementById("#timer-text");
-let quizQuestion = document.getElementById("#quiz-question");
-let buttonContainer = document.getElementById("#quiz-btn");
-let initialTextBox = document.getElementById("#initials");
-let initialButton = document.getElementById("#intials-btn");
+let highScore = document.getElementById("high-score");
+let timer = document.getElementById("timer-text");
+let quizQuestion = document.getElementById("quiz-question");
+let buttonContainer = document.getElementById("quiz-btn");
+let initialTextBox = document.getElementById("initials");
+let initialButton = document.getElementById("intials-btn");
+let currentQuestion = -1;
 
 
 // Array with Quiz questions and answer selection.  Answers options set to 'True' for correct and 'False' if not correct choice option.
@@ -124,6 +125,36 @@ const quiz = [
      
 ]
 
+// function to begin quiz -- it will hide the instruction box and display the first quiz question when start is clicked
+function beginQuiz() {
+    // timer set to start for time given to complete the quiz
+    let timeLeft = 90;
+    let countdown = setInterval(function() {
+        if(timeLeft <= 0) {
+            clearInterval(countdown); // Quiz Over  
+        } else {
+            document.getElementById("timer-text").innerText = "Time Left: " + timeLeft
+        }
+        timeLeft -= 1;
+    }, 1000);
+    
+
+    // hide box with initial instructions and start quiz button
+    document.getElementById("instruction-box").setAttribute('style', 'display: none');
+
+    // display quiz box with first question in the quiz box
+    document.getElementById("quiz-container").setAttribute('style', 'display: block');
+    return false;
+
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    if(currentQuestion > quiz.length) {
+        
+    }
+
+}
 
 
 let answerBtn = document.createElement("button");

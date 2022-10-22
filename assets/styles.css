@@ -1,0 +1,57 @@
+:root {
+    --bgContainer: #FFFFFF;
+    --bgMain: #F8F8F8;
+    --timerText: 0033FF;
+    --buttonBorder: 0066FF;
+
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bgMain);
+}
+
+
+#instruction-box {
+    background-color: var(--bgContainer);
+    width: 75vw;
+    height: 75vh;
+    padding: 50px;
+    border: 5px solid gray;
+    margin-left: 12vw;
+    margin-top: 12vh;
+    display: block;
+}
+
+#quiz-container {
+    background-color: white;
+    width: 75vw;
+    height: 75vh;
+    padding: 50px;
+    border: 5px solid gray;
+    margin-left: 12vw;
+    margin-top: 12vh;
+    display: none;
+}
+
+#high-score-container {
+    background-color: white;
+    width: 75vw;
+    height: 75vh;
+    padding: 50px;
+    border: 5px solid gray;
+    margin-left: 12vw;
+    margin-top: 12vh;
+    display: none;
+}
+
+#return-container { 
+    background-color: white;
+    width: 75vw;
+    height: 75vh;
+    padding: 50px;
+    border: 5px solid gray;
+    margin-left: 12vw;
+    margin-top: 12vh;
+    display: none;
+}

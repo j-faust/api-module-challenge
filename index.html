@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style rel="stylesheet" href="./assets/styles.css"></style>
+    <link rel="stylesheet" href="./assets/styles.css">
     <script src="./assets/script.js"></script>
     <title>Coding Quiz App!</title>
 </head>
@@ -13,22 +13,22 @@
 
         <div id="high-score">View High Score</div>
 
-        <div id="timer-text"></div>
+        <div><span id="timer-text"></span></span></div>
 
-        <div class="instruction-box">
+        <div id="instruction-box">
                     <span id="instruction-text">
-                        Try to answer as many code-related questions within time limit as possible.<br>
+                        Try to answer as many code-related questions within 90 seconds.<br>
                         Please keep in mind that incorrect answers will penalize the score/time by 10 seconds!
                     </span>
 
-                <div><button type="button" id="start-btn">Start Quiz!</button></div>
+                <div><button type="button"  class="button" id="start-btn" onclick="beginQuiz()">Start Quiz!</button></div>
         </div>
 
 
     <div id="quiz-container">
         <div id="question-container"></div>
 
-        <div id="quiz-btn"></div>
+        <div id="quiz-btn" class="button"></div>
 
     </div>
 
@@ -39,7 +39,7 @@
 
         <div id="user-initials">Enter Your Intials: <input type="text" id="initials"></div>
 
-        <div><button type="button" id="intials-btn">Submit  </button></div>
+        <div><button type="button" class="button" id="intials-btn">Submit</button></div>
 
     </div>
 
@@ -47,9 +47,9 @@
 
         <span id="return-text">Play Again?</span>
 
-        <div><button type="button" id="return-btn">Start Over</button></div>
+        <div><button type="button" class="button" id="return-btn">Start Over</button></div>
 
-        <div><button type="button" id="exit-btn">Exit</button></div>
+        <div><button type="button" class="button" id="exit-btn">Exit</button></div>
 
 
     </div>
