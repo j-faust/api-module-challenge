@@ -1,8 +1,10 @@
 :root {
     --bgContainer: #FFFFFF;
     --bgMain: #F8F8F8;
-    --timerText: 0033FF;
-    --buttonBorder: 0066FF;
+    --timerText: #0033FF;
+    --buttonBorder: #0066FF;
+    --textPageColor: black;
+    --textButtonHover: #FFFFFF;
 
 }
 
@@ -11,6 +13,56 @@ body {
     background-color: var(--bgMain);
 }
 
+#high-score {
+    align-items: center;
+    position: relative;
+}
+
+#timer-text {
+    position: relative;
+    float: right;
+}
+
+button {
+    transition-duration: 0.4s;
+    border: 2px solid var(--buttonBorder);
+    background-color: var(--bgContainer);
+    color: var(--textPageColor);
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 4px;
+}
+
+button:hover {
+    border: 2px solid var(--buttonBorder);
+    background-color: var(--buttonBorder);
+    color: var(--textButtonHover);
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.51);
+}
+
+/* #quiz-btn{
+transition-duration: 0.4s;
+border: 2px solid var(--buttonBorder);
+background-color: var(--bgContainer);
+color: var(--textPageColor);
+font-size: 16px;
+width: 350px;
+padding: 12px 28px;
+border-radius: 4px;
+}
+
+#quiz-btn:hover {
+        border: 2px solid var(--buttonBorder);
+    background-color: var(--buttonBorder);
+    color: var(--textButtonHover);
+    font-size: 16px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.51);
+} */
 
 #instruction-box {
     background-color: var(--bgContainer);
@@ -24,7 +76,7 @@ body {
 }
 
 #quiz-container {
-    background-color: white;
+    background-color: var(--bgContainer);
     width: 75vw;
     height: 75vh;
     padding: 50px;
@@ -35,7 +87,7 @@ body {
 }
 
 #high-score-container {
-    background-color: white;
+    background-color: var(--bgContainer);
     width: 75vw;
     height: 75vh;
     padding: 50px;
@@ -46,7 +98,7 @@ body {
 }
 
 #return-container { 
-    background-color: white;
+    background-color: var(--bgContainer);
     width: 75vw;
     height: 75vh;
     padding: 50px;

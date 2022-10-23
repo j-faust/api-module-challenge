@@ -102,11 +102,11 @@ const quiz = [
     },    {
         question: "What type of bracket is used to indicate that a variable is an array?",
         answers: [{
-            text: "()", isCorrect: false
+            text: "( )", isCorrect: false
         }, {
-            text: "{}", isCorrect: false
+            text: "{ }", isCorrect: false
         }, {
-            text: "[]", isCorrect: true
+            text: "[ ]", isCorrect: true
         }, {
             text: "||", isCorrect: false
         }] 
@@ -128,14 +128,14 @@ const quiz = [
 // function to begin quiz -- it will hide the instruction box and display the first quiz question when start is clicked
 function beginQuiz() {
     // timer set to start for time given to complete the quiz
-    let timeLeft = 90;
+    let timeLeft = 120;
     let countdown = setInterval(function() {
-        if(timeLeft <= 0) {
+        if(timeLeft <= -1) {
             clearInterval(countdown); // Quiz Over  
         } else {
-            document.getElementById("timer-text").innerText = "Time Left: " + timeLeft
+            document.getElementById("timer-text").innerText = "Time Left: " + timeLeft //sets time left to  be displayed on the the page
         }
-        timeLeft -= 1;
+        timeLeft--;
     }, 1000);
     
 
@@ -144,21 +144,53 @@ function beginQuiz() {
 
     // display quiz box with first question in the quiz box
     document.getElementById("quiz-container").setAttribute('style', 'display: block');
+
+    nextQuestion();
     return false;
 
 }
 
+// Function for the questions -> If the questions haven't reached the total length of the quiz array then it will proceed to the next question, if it is at the last question in the array then it will go to 
+// the endQuiz() function to proceed and have the user enter intials for high score board.
 function nextQuestion() {
     currentQuestion++;
     if(currentQuestion > quiz.length) {
+        endQuiz();
+    } else {
+        let q = quiz[currentQuestion]
+        document.getElementById("question-container").innerText = q.question;
+
+        const e = document.getElementById("quiz-btn"); // assigning 'e' to get element from HTML doc
         
-    }
+        // using while loop to loop through and remove the all child elements each time to prevent from
+        // all answer choices showing as the questions progress
+        let child = e.lastElementChild;
+        while (child) {
+        e.removeChild(child); //removing child elements for answer buttons
+        child = e.lastElementChild;
+        }
+        q.answers.forEach(addAnswerButton);
+
+    };
 
 }
 
+// Function to add answer choice buttons to the questions
+function addAnswerButton(a) {
+    let answrBtn = document.createElement("BUTTON");
+    answrBtn.innerText = a.text;
+    answrBtn.value = a.isCorrect; 
+    answrBtn.onclick = answerQuestion;
+    document.getElementById("quiz-btn").appendChild(answrBtn);    
+    
+}
 
-let answerBtn = document.createElement("button");
-answerBtn.innerHTML = "";
+function answerQuestion(isCorrect) {
+    nextQuestion();
+}
+
+
+
 
 
 
