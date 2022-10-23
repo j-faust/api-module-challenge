@@ -48,6 +48,10 @@ button:hover {
     display: block;
 }
 
+#statusMessageA {
+    margin: 25px 10px 10px 10px;
+}
+
 
 #instruction-box {
     background-color: var(--bgContainer);
@@ -76,7 +80,7 @@ button:hover {
     display: none;
 }
 
-#high-score-container {
+#quiz-over-container {
     background-color: var(--bgContainer);
     width: 75vw;
     height: 75vh;
@@ -96,5 +100,16 @@ button:hover {
     margin-left: 12vw;
     margin-top: 12vh;
     display: none;
+}
+
+#final-score {
+    font-size: 25px;
+    text-align: center;
+    margin: 15px 15px 15px 15px;
+}
+
+#user-initials {
+    text-align: center;
+    margin: 10px 10px 10px 10px;
 }
 

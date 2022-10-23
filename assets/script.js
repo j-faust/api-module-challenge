@@ -2,9 +2,11 @@ let highScore = document.getElementById("high-score");
 let timer = document.getElementById("timer-text");
 let quizQuestion = document.getElementById("quiz-question");
 let buttonContainer = document.getElementById("quiz-btn");
-let initialTextBox = document.getElementById("initials");
+let initialTextBox = document.getElementById("initials-text-box");
 let initialButton = document.getElementById("intials-btn");
 let currentQuestion = -1;
+let userScore = 0;
+let timeLeft = 120;
 
 
 // Array with Quiz questions and answer selection.  Answers options set to 'True' for correct and 'False' if not correct choice option.
@@ -117,7 +119,7 @@ const quiz = [
         }, {
             text: "===", isCorrect: true
         }, {
-            text: "===", isCorrect: false
+            text: "==", isCorrect: false
         }, {
             text: "!", isCorrect: false
         }] 
@@ -128,10 +130,10 @@ const quiz = [
 // function to begin quiz -- it will hide the instruction box and display the first quiz question when start is clicked
 function beginQuiz() {
     // timer set to start for time given to complete the quiz
-    let timeLeft = 120;
     let countdown = setInterval(function() {
         if(timeLeft <= -1) {
-            clearInterval(countdown); // Quiz Over  
+            clearInterval(countdown); 
+            quizOver();  
         } else {
             document.getElementById("timer-text").innerText = "Time Left: " + timeLeft //sets time left to  be displayed on the the page
         }
@@ -154,8 +156,8 @@ function beginQuiz() {
 // the endQuiz() function to proceed and have the user enter intials for high score board.
 function nextQuestion() {
     currentQuestion++;
-    if(currentQuestion > quiz.length) {
-        endQuiz();
+    if(currentQuestion >= quiz.length) {
+        quizOver();
     } else {
         let q = quiz[currentQuestion]
         document.getElementById("question-container").innerText = q.question;
@@ -185,12 +187,35 @@ function addAnswerButton(a) {
     
 }
 
-function answerQuestion(isCorrect) {
+function answerQuestion(event) {
+    let correct = event.srcElement.value;
+    
+    if(correct == "true") {
+        userScore++;
+    } else {
+        timeLeft -= 10;
+
+    }
+    
+    showStatusMessage(correct);
     nextQuestion();
+    
 }
 
+// status message set to display to user whether the previous was correct or incorrect at the bottom of the container
+function showStatusMessage(correct) {
+    if(correct == "true") {
+        document.getElementById("statusMessageA").innerText = "Correct!"; // if answer is correct displays correct to user
+    } else {
+        document.getElementById("statusMessageA").innerText = "Incorrect!"; // if answer is incorrect displays incorrect to user
+    };
+}
+
+function quizOver() {
+    document.getElementById("quiz-container").setAttribute('style', 'display: none');
+    document.getElementById("final-score").innerText = "Your Final Score: " + userScore;
+    document.getElementById("quiz-over-container").setAttribute('style', 'display: block');
+    timeLeft = 0;
 
 
-
-
-
+}
