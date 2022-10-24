@@ -164,7 +164,7 @@ function nextQuestion() {
 
         const e = document.getElementById("quiz-btn"); // assigning 'e' to get element from HTML doc
         
-        // using while loop to loop through and remove the all child elements each time to prevent from
+        // using 'while' loop to loop through and remove all the child elements each time to prevent from
         // all answer choices showing as the questions progress
         let child = e.lastElementChild;
         while (child) {
@@ -187,6 +187,8 @@ function addAnswerButton(a) {
     
 }
 
+// function that if the question is answered correct, then the user's score will add 1 point, if incorrect time will be deducted by 10 seconds.
+
 function answerQuestion(event) {
     let correct = event.srcElement.value;
     
@@ -197,8 +199,8 @@ function answerQuestion(event) {
 
     }
     
-    showStatusMessage(correct);
-    nextQuestion();
+    showStatusMessage(correct); // status message to displace on bottom if previous answer was correct or incorrect
+    nextQuestion(); // function call to display next question for the user
     
 }
 
@@ -216,12 +218,51 @@ function quizOver() {
     document.getElementById("final-score").innerText = "Your Final Score: " + userScore + "/10";
     document.getElementById("quiz-over-container").setAttribute('style', 'display: block');
     timeLeft = 0;
-    
-    saveUserInitials();
-    // tryAgain();
 
 }
 
-function saveUserInitials() {
-    window.localStorage.setItem("initialTextBox", initialTextBox);
+
+function saveUser() {
+
+let saveUserScore = 
+    {
+    userHighScore: userScore,
+    initialsEntered: initialTextBox.value.trim()
+};
+
+let topScores = [];
+let scoresString = localStorage.getItem("userScores");
+
+if (scoresString == undefined || scoresString == null) {
+    topScores = []
+} else {
+    topScores = JSON.parse(scoresString);
 }
+
+topScores.push(saveUserScore);
+topScores.sort(compare);
+localStorage.setItem("userScores", JSON.stringify(topScores));
+
+tryAgain();
+
+}
+
+function compare( a, b ) {
+    if ( a.userHighScore < b.userHighScore ){
+      return -1;
+    }
+    if ( a.userHighScore > b.userHighScore ){
+      return 1;
+    }
+    return 0;
+  }
+
+
+function tryAgain() {
+    document.getElementById("quiz-over-container").setAttribute('style', 'display: none');
+    document.getElementById("return-container").setAttribute('style', 'display: block');
+
+  }
+
+
+

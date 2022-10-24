@@ -21,6 +21,7 @@ body {
     position: relative;
 }
 
+/* position text to display the timer top right */
 #timer-text {
     position: relative;
     float: right;
@@ -32,10 +33,12 @@ button#start-btn {
     
 }
 
+/* position the button to submit user's intials to the right in it's container */
 button#initials-btn {
     float: right;
 }
 
+/* set styling for all buttons on the page */
 button {
     transition-duration: 0.4s;
     border: 2px solid var(--buttonBorder);
@@ -51,6 +54,7 @@ button {
     
 }
 
+/* styling for hover over for all buttons on the page */
 button:hover {
     border: 2px solid var(--buttonBorder);
     background-color: var(--buttonBorder);
@@ -63,11 +67,13 @@ button:hover {
     display: block;
 }
 
+/* margin set for the status message to be displayed */
 #statusMessageA {
     margin: 25px 10px 10px 10px;
 }
 
 
+/* container styling for the quiz instructions to the user */
 #instruction-box {
     background-color: var(--bgContainer);
     font-size: 25px;
@@ -82,6 +88,7 @@ button:hover {
 }
 
 
+/* styling for the container that displays the quiz questions and answer choices  */
 #quiz-container {
     background-color: var(--bgContainer);
     font-size: 25px;
@@ -95,6 +102,7 @@ button:hover {
     display: none;
 }
 
+/* styling for the container that asks for the user's intials */
 #quiz-over-container {
     background-color: var(--bgContainer);
     width: 75vw;
@@ -106,6 +114,7 @@ button:hover {
     display: none;
 }
 
+/* styling for the container that asks the user to try again or quit */
 #return-container { 
     background-color: var(--bgContainer);
     width: 75vw;
@@ -117,12 +126,14 @@ button:hover {
     display: none;
 }
 
+/* styling for what displays the user's final score */
 #final-score {
     font-size: 40px;
     text-align: center;
     margin: 15px 15px 15px 15px;
 }
 
+/* styling for the box and text that asks for the user's intials */
 #user-initials {
     text-align: center;
     margin: 10px 10px 10px 10px;
