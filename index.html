@@ -16,9 +16,10 @@
         <div><span id="timer-text"></span></span></div>
 
         <div id="instruction-box">
+                    <span id="rules-header"><h3>Quiz Rules</h3></span>
                     <span id="instruction-text">
-                        Try to answer as many code-related questions within 90 seconds.<br>
-                        Please keep in mind that incorrect answers will penalize the score/time by 10 seconds!
+                        Try to answer as many code-related questions within 120 seconds.<br>
+                        Please keep in mind that incorrect answers will deduct 10 seconds from the time!
                     </span>
 
                 <div><button type="button"  class="button" id="start-btn" onclick="beginQuiz()">Start Quiz!</button></div>
@@ -41,13 +42,13 @@
 
         <div id="user-initials">Enter Your Intials: <input type="text" id="initials-text-box"></div>
 
-        <div><button type="button" class="button" id="intials-btn">Submit</button></div>
+        <div><button type="button" class="button" id="initials-btn" onclick="quizOver()">Submit</button></div>
 
     </div>
 
     <div id="return-container">
 
-        <span id="return-text">Play Again?</span>
+        <span id="return-text">Take Quiz Again?</span>
 
         <div><button type="button" class="button" id="return-btn">Start Over</button></div>
 

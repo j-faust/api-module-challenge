@@ -3,7 +3,7 @@ let timer = document.getElementById("timer-text");
 let quizQuestion = document.getElementById("quiz-question");
 let buttonContainer = document.getElementById("quiz-btn");
 let initialTextBox = document.getElementById("initials-text-box");
-let initialButton = document.getElementById("intials-btn");
+let initialButton = document.getElementById("initials-btn");
 let currentQuestion = -1;
 let userScore = 0;
 let timeLeft = 120;
@@ -213,9 +213,15 @@ function showStatusMessage(correct) {
 
 function quizOver() {
     document.getElementById("quiz-container").setAttribute('style', 'display: none');
-    document.getElementById("final-score").innerText = "Your Final Score: " + userScore;
+    document.getElementById("final-score").innerText = "Your Final Score: " + userScore + "/10";
     document.getElementById("quiz-over-container").setAttribute('style', 'display: block');
     timeLeft = 0;
+    
+    saveUserInitials();
+    // tryAgain();
 
+}
 
+function saveUserInitials() {
+    window.localStorage.setItem("initialTextBox", initialTextBox);
 }

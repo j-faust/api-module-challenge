@@ -1,18 +1,21 @@
+/* adding root with global variables  */
 :root {
     --bgContainer: #FFFFFF;
     --bgMain: #F8F8F8;
     --timerText: #0033FF;
     --buttonBorder: #0066FF;
-    --textPageColor: black;
+    --textPageColor: #000000;
     --textButtonHover: #FFFFFF;
 
 }
 
+/* Set background color and font family for the page */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif, serif;
     background-color: var(--bgMain);
 }
 
+/*  */
 #high-score {
     align-items: center;
     position: relative;
@@ -20,6 +23,16 @@ body {
 
 #timer-text {
     position: relative;
+    float: right;
+}
+
+/* Styling to put the 'Start Quiz!' button to the right on the container */
+button#start-btn {
+    float: right;
+    
+}
+
+button#initials-btn {
     float: right;
 }
 
@@ -34,6 +47,8 @@ button {
     margin: 30px 10px 10px 10px;
     border-radius: 4px;
     display: block;
+    
+    
 }
 
 button:hover {
@@ -103,7 +118,7 @@ button:hover {
 }
 
 #final-score {
-    font-size: 25px;
+    font-size: 40px;
     text-align: center;
     margin: 15px 15px 15px 15px;
 }
