@@ -139,3 +139,14 @@ button:hover {
     margin: 10px 10px 10px 10px;
 }
 
+#return-text {
+    text-align: center;
+    font-size: 30px;
+
+}
+
+/* align the exit button to the left in the container */
+#exit-btn {
+    float: left;
+}
+

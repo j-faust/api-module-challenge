@@ -129,6 +129,8 @@ const quiz = [
 
 // function to begin quiz -- it will hide the instruction box and display the first quiz question when start is clicked
 function beginQuiz() {
+    userScore = 0;
+    timeLeft = 120;
     // timer set to start for time given to complete the quiz
     let countdown = setInterval(function() {
         if(timeLeft <= -1) {
@@ -213,16 +215,18 @@ function showStatusMessage(correct) {
     };
 }
 
+
 function quizOver() {
-    document.getElementById("quiz-container").setAttribute('style', 'display: none');
-    document.getElementById("final-score").innerText = "Your Final Score: " + userScore + "/10";
-    document.getElementById("quiz-over-container").setAttribute('style', 'display: block');
+    document.getElementById("quiz-container").setAttribute('style', 'display: none'); // sets attribute of display none to quiz container once all questions are complete
+    document.getElementById("final-score").innerText = "Your Final Score: " + userScore + "/10"; // displays user High Score witha  message
+    document.getElementById("quiz-over-container").setAttribute('style', 'display: block'); // displays container for user to enter initials once quiz is complete
     timeLeft = 0;
 
 }
 
-
+// This function will save the user's high score and save it in localStorage, ready to be called back when the user clicks 'View High Score' on top right
 function saveUser() {
+        initialTextBox = document.getElementById("initials-text-box");
 
 let saveUserScore = 
     {
@@ -239,14 +243,15 @@ if (scoresString == undefined || scoresString == null) {
     topScores = JSON.parse(scoresString);
 }
 
-topScores.push(saveUserScore);
-topScores.sort(compare);
-localStorage.setItem("userScores", JSON.stringify(topScores));
+topScores.push(saveUserScore); // will push scores to the last element on the topScore array in localStorage
+topScores.sort(compare); // calls compare function to sort scores from highest to lowest
+localStorage.setItem("userScores", JSON.stringify(topScores)); // sets item for user scores to array names topScores in string to localStorage
 
 tryAgain();
 
 }
 
+//  This function compares and lists high scores from highest to lowest
 function compare( a, b ) {
     if ( a.userHighScore < b.userHighScore ){
       return -1;
@@ -257,12 +262,17 @@ function compare( a, b ) {
     return 0;
   }
 
-
+// This will hide the container with the high score and place for initials from the user and then display the Quiz Over container for the user to exit back to the home page to try again
 function tryAgain() {
     document.getElementById("quiz-over-container").setAttribute('style', 'display: none');
     document.getElementById("return-container").setAttribute('style', 'display: block');
 
   }
 
+
+// function to exit quiz and to home screen of webpage
+function exitQuiz() {
+    window.location.reload();
+}
 
 

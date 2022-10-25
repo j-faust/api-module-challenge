@@ -9,23 +9,28 @@
     <title>Coding Quiz App!</title>
 </head>
 <body>
+
+    <!-- main page container -->
     <div class="container">
 
+        <!-- Div with id to diplay the high scores of the user -->
         <div id="high-score">View High Score</div>
 
+        <!-- Div for timer element on the page -->
         <div><span id="timer-text"></span></span></div>
 
+        <!-- Div container for instructions for the quiz and and button to begin the quiz -->
         <div id="instruction-box">
                     <span id="rules-header"><h3>Quiz Rules</h3></span>
                     <span id="instruction-text">
                         Try to answer as many code-related questions within 120 seconds.<br>
-                        Please keep in mind that incorrect answers will deduct 10 seconds from the time!
+                        Please keep in mind that incorrect answers will deduct 10 seconds from the time! Good Luck!
                     </span>
 
                 <div><button type="button"  class="button" id="start-btn" onclick="beginQuiz()">Start Quiz!</button></div>
         </div>
 
-
+<!-- Div container that will contain the questions and button for each question  as well as status message for Correct/Incorrect -->
     <div id="quiz-container">
         <div id="question-container"></div>
 
@@ -35,6 +40,7 @@
 
     </div>
 
+    <!-- Div that will display what score the user got, also with a text box for intials and button to submit -->
     <div id="quiz-over-container">
         <div id="final-score"></div>
 
@@ -46,13 +52,16 @@
 
     </div>
 
+    <!-- Div Container that will display end of quiz message after user submits their initials -->
     <div id="return-container">
 
-        <span id="return-text">Take Quiz Again?</span>
+        <span id="return-text"><h3>Nice Job!</h3>
+            <p class="try-again-text">Nice job on the quiz!  To take the quiz again just click the 'Exit' button to go back to the beginning!</p><br>
+            <p class="try-again-text">You can also view other high scores on the top right!</p>
+        </span>
 
-        <div><button type="button" class="button" id="return-btn">Start Over</button></div>
-
-        <div><button type="button" class="button" id="exit-btn">Exit</button></div>
+        <!-- Div for exit button to allow user to start over on quiz -->
+        <div><button type="button" class="button" id="exit-btn" onclick="exitQuiz()">Exit</button></div>
 
 
     </div>
