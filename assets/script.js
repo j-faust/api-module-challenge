@@ -254,20 +254,20 @@ tryAgain();
 //  This function compares and lists high scores from highest to lowest
 function compare( a, b ) {
     if ( a.userHighScore > b.userHighScore ){
-      return -1;
+        return -1;
     }
     if ( a.userHighScore < b.userHighScore ){
-      return 1;
+        return 1;
     }
     return 0;
-  }
+    }
 
 // This will hide the container with the high score and place for initials from the user and then display the Quiz Over container for the user to exit back to the home page to try again
 function tryAgain() {
     document.getElementById("quiz-over-container").setAttribute('style', 'display: none');
     document.getElementById("return-container").setAttribute('style', 'display: block');
 
-  }
+}
 
 
 // function to exit quiz and to home screen of webpage
