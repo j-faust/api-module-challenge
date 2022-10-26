@@ -253,10 +253,10 @@ tryAgain();
 
 //  This function compares and lists high scores from highest to lowest
 function compare( a, b ) {
-    if ( a.userHighScore < b.userHighScore ){
+    if ( a.userHighScore > b.userHighScore ){
       return -1;
     }
-    if ( a.userHighScore > b.userHighScore ){
+    if ( a.userHighScore < b.userHighScore ){
       return 1;
     }
     return 0;
@@ -275,4 +275,29 @@ function exitQuiz() {
     window.location.reload();
 }
 
+// function to retrieve high score from local storage and display on pop up boxs
+function getHighScore() {
+    document.getElementById("hs-popup").setAttribute('style', 'display: block');
+    document.getElementById("high-score-list").innerHTML = "Init Score <br>" ;
+    let topScores = [];
+    let scoresString = localStorage.getItem("userScores");
+    
+    // retrieve and parses data from localstorage
+    if (scoresString !== undefined ||   scoresString !== null) {
+        topScores = JSON.parse(scoresString);
 
+        // for loop to loop through saves high scores and return the top 5
+        for(let i = 0; i < 5; i++) {
+        if(i < topScores.length) {    
+        document.getElementById("high-score-list").innerHTML += topScores[i].initialsEntered + " " + topScores[i].userHighScore.toString() + "<br>" ;
+            }
+        }
+    } 
+    
+}
+
+// Closes pop up box
+function closeModal() {
+    document.getElementById("hs-popup").setAttribute('style', 'display: none');
+
+}

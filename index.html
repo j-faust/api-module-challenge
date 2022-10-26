@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles.css">
-    <script src="./assets/script.js"></script>
     <title>Coding Quiz App!</title>
 </head>
 <body>
@@ -13,8 +12,18 @@
     <!-- main page container -->
     <div class="container">
 
-        <!-- Div with id to diplay the high scores of the user -->
-        <div id="high-score">View High Score</div>
+        <!-- Div with id to diplay the high scores of the user in a modal -->
+        <div id="high-score">
+            <div id="high-score-content">
+                <button type="button" id="btn-hs" class="button" onclick="getHighScore()">High Score</button>
+                <div id="hs-popup" class="hs-main-container">    
+                    <div id="high-score-modal-scores" class="hs-child-content">
+                        <span class="close-modal-box" onclick="closeModal()">&times;</span>
+                            <div id="high-score-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Div for timer element on the page -->
         <div><span id="timer-text"></span></span></div>
@@ -66,19 +75,9 @@
 
     </div>
 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
     </div>
+
+    <!-- Link to JavaScript -->
+    <script src="./assets/script.js"></script>
 </body>
 </html>

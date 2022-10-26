@@ -1,5 +1,9 @@
 /* adding root with global variables  */
 :root {
+    --HsBtnBorder: #0000cd;
+    --HsBtnBorderHover: #00008B;
+    --HsBtnTextColor: #00008B;
+    --bgHsButton: #0000cd;
     --bgContainer: #FFFFFF;
     --bgMain: #F8F8F8;
     --timerText: #0033FF;
@@ -13,6 +17,51 @@
 body {
     font-family: Arial, sans-serif, serif;
     background-color: var(--bgMain);
+}
+
+/* Popup display */
+.hs-main-container {
+    width: 100%; 
+    height: 100%; 
+    left: 0;
+    top: 0;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-bottom: 50px; 
+    padding-top: 100px;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+  /* Popup Content */
+.hs-child-content {
+    background-color: #eeeeee;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #111;
+    border-radius: 5px;
+    width: 800px;
+    height: 400px;
+}
+
+  /* The Close Button */
+.close-modal-box {
+    color: #dddddd;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+  /* The Close Button Hover to make 'x' appear */
+    .close-modal-box:hover,
+    .close-modal-box:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*  */
@@ -63,7 +112,7 @@ button:hover {
     padding: 12px 28px;
     margin: 25px 5px 5px 5px;
     border-radius: 4px;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.51);
+    box-shadow: -8px 17px 105px -8px rgba(13,15,28,0.75);
     display: block;
 }
 
@@ -81,7 +130,9 @@ button:hover {
     width: 75vw;
     height: 75vh;
     padding: 50px;
-    border: 5px solid gray;
+    border: 4px solid var(--buttonBorder);
+    border-radius: 4px;
+    box-shadow: -8px 17px 85px -8px rgba(13,15,28,0.75);
     margin-left: 12vw;
     margin-top: 12vh;
     display: block;
@@ -96,7 +147,9 @@ button:hover {
     width: 75vw;
     height: 75vh;
     padding: 50px;
-    border: 5px solid gray;
+    border: 4px solid var(--buttonBorder);
+    border-radius: 4px;
+    box-shadow: -8px 17px 85px -8px rgba(13,15,28,0.75);
     margin-left: 12vw;
     margin-top: 12vh;
     display: none;
@@ -107,8 +160,10 @@ button:hover {
     background-color: var(--bgContainer);
     width: 75vw;
     height: 75vh;
-    padding: 50px;
-    border: 5px solid gray;
+    padding: 50px;    
+    border: 4px solid var(--buttonBorder);
+    border-radius: 4px;
+    box-shadow: -8px 17px 85px -8px rgba(13,15,28,0.75);
     margin-left: 12vw;
     margin-top: 12vh;
     display: none;
@@ -120,10 +175,13 @@ button:hover {
     width: 75vw;
     height: 75vh;
     padding: 50px;
-    border: 5px solid gray;
+    border: 4px solid var(--buttonBorder);
+    border-radius: 4px;
+    box-shadow: -8px 17px 85px -8px rgba(13,15,28,0.75);
     margin-left: 12vw;
     margin-top: 12vh;
     display: none;
+    
 }
 
 /* styling for what displays the user's final score */
@@ -148,5 +206,39 @@ button:hover {
 /* align the exit button to the left in the container */
 #exit-btn {
     float: left;
+}
+
+/* High Score button styling */
+#btn-hs {
+    transition-duration: 0.4s;
+    background-color: var(--bgContainer);
+    color: var(--textPageColor);
+    width: 250px;
+    font-size: 16px;
+    padding: 12px 28px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    border: 2px solid var(--HsBtnBorder;
+    background-color: var(--bgContainer);
+    color: var(--HsBtnBorder);
+    width: 150px;
+    font-size: 16px;
+    padding: 12px 28px;
+    margin: 30px 10px 10px 10px;
+    border-radius: 4px;
+
+}
+
+/* High Score button styling when mouse hovers */
+#btn-hs:hover {
+    border: 2px solid var(--HsBtnBorderHover);
+    background-color: var(--HsBtnBorder);
+    color: var(--bgContainer);
+    font-size: 16px;
+    padding: 12px 28px;
+    margin: 25px 5px 5px 5px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.51);
 }
 
