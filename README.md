@@ -6,11 +6,11 @@ The purpose of this project was to build a timed Coding Quiz Application on a we
 
 ## HTML
 
-* Added Div Tags with ID and Class names to set layout for webpage.
+* Added Div Tags with ID and Class names to set layout for webpage. These containers also contain the 
 
 * Static buttons and text added within appropriate Div tag for items.
 
-*'onclick' call added to static buttons within HTML to reference JavaScript function.  
+* 'onclick' call added to static buttons within HTML to reference JavaScript function.  
 
 ## CSS 
 
@@ -60,6 +60,17 @@ The purpose of this project was to build a timed Coding Quiz Application on a we
 [Coding Quiz App]()
 
 ## Webpage Screenshots
+
+![Webpage rules](./Images/QuizRulesWebpage1.png)
+![First Quiz Question](./Images/QuizWebPage2.png)
+![Second Quiz Question](./Images/QuizWebpage3.png)
+![Third Quiz Question](./Images/QuizWebpage4.png)
+![Fourth Quiz Question](./Images/QuizWebpage5.png)
+![Fifth Quiz Question](./Images/QuizWebpage6.png)
+![Sixth Quiz Question](./Images/QuizWebpage7.png)
+![Seventh Quiz Question](./Images/QuizWebpage8.png)
+![Eigth Quiz Question](./Images/QuizWebpage9.png)
+![Nineth Quiz Question](./Images/QuizWebpage10.png)
 
 
 

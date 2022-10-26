@@ -239,6 +239,38 @@ button:hover {
     padding: 12px 28px;
     margin: 25px 5px 5px 5px;
     border-radius: 4px;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.51);
+    box-shadow
+    : 5px 5px 15px -1px rgba(0,0,0,0.51);
 }
 
+
+/* Added to make website responsive to user screen */
+/* @media  screen and (max-width: 980px) {
+    header-container {
+        flex-direction: column;
+    }
+    work-main {
+        flex-direction: column;
+    }
+    h1 {
+    font-size: large;
+    flex-direction: column;  
+    }
+    nav{
+        font-size: small;
+        flex-direction: column;
+    }  
+}
+
+@media screen and (max-width: 768px) {
+    .work-container,
+    .work-container:first-child {
+        flex-basis: 100%;
+    }
+
+.work-main {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+} */
