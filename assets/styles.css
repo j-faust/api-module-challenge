@@ -245,32 +245,19 @@ button:hover {
 
 
 /* Added to make website responsive to user screen */
-/* @media  screen and (max-width: 980px) {
-    header-container {
+@media  screen and (max-width: 980px) {
+    .container {
         flex-direction: column;
     }
-    work-main {
-        flex-direction: column;
-    }
-    h1 {
-    font-size: large;
-    flex-direction: column;  
-    }
-    nav{
-        font-size: small;
-        flex-direction: column;
-    }  
+    
 }
 
 @media screen and (max-width: 768px) {
-    .work-container,
-    .work-container:first-child {
-        flex-basis: 100%;
-    }
-
-.work-main {
+    
+.containter {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        flex-basis: 100%;
     }
-} */
+}

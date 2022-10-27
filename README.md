@@ -61,16 +61,18 @@ The purpose of this project was to build a timed Coding Quiz Application on a we
 
 ## Webpage Screenshots
 
-![Webpage rules](./Images/QuizRulesWebpage1.png)
-![First Quiz Question](./Images/QuizWebPage2.png)
-![Second Quiz Question](./Images/QuizWebpage3.png)
-![Third Quiz Question](./Images/QuizWebpage4.png)
-![Fourth Quiz Question](./Images/QuizWebpage5.png)
-![Fifth Quiz Question](./Images/QuizWebpage6.png)
-![Sixth Quiz Question](./Images/QuizWebpage7.png)
-![Seventh Quiz Question](./Images/QuizWebpage8.png)
-![Eigth Quiz Question](./Images/QuizWebpage9.png)
-![Nineth Quiz Question](./Images/QuizWebpage10.png)
-
-
+![Webpage Quiz start/rules](./Images/quiz1.png)
+![Quiz First Question](./Images/quiz2.png)
+![Quiz Second Question](./Images/quiz3.png)
+![Quiz Thirs Question](./Images/quiz4.png)
+![Quiz Fourth Question](./Images/quiz5.png)
+![Quiz Fifth Question](./Images/quiz6.png)
+![Quiz Sixth Question](./Images/quiz7.png)
+![Quiz Seventh Question](./Images/quiz8.png)
+![Quiz Eigth Question](./Images/quiz9.png)
+![Quiz Ninth Question](./Images/quiz10.png)
+![Quiz Tenth Question](./Images/quiz11.png)
+![Enter Intials Screen](./Images/quiz12.png)
+![Final Screen](./Images/quiz13.png)
+![High Score Pop Out](./Images/quiz14.png)
 
